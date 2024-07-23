@@ -29,40 +29,40 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
       // The signed-in user info.
       const user = result.user;
 
-      // if (user.email.includes("icone.g12.br")) {
-      //   Toastify({
-      //     text: "Logado com sucesso",
-      //     duration: 3000,
-      //     destination: "https://github.com/apvarun/toastify-js",
-      //     close: true,
-      //     gravity: "top", // `top` or `bottom`
-      //     position: "center", // `left`, `center` or `right`
-      //     stopOnFocus: true, // Prevents dismissing of toast on hover
-      //     style: {
-      //       background: "green",
-      //     },
-      //     onClick: function(){} // Callback after click
-      //   }).showToast();
+      if (user.email.includes("icone.g12.br")) {
+        Toastify({
+          text: "Logado com sucesso",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "green",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
 
         console.log(user);
 
-      //   window.location.href('menu-coordenador.html');
-      // }
-      // else {
-      //   Toastify({
-      //     text: "Login inválido",
-      //     duration: 3000,
-      //     destination: "https://github.com/apvarun/toastify-js",
-      //     close: true,
-      //     gravity: "top", // `top` or `bottom`
-      //     position: "center", // `left`, `center` or `right`
-      //     stopOnFocus: true, // Prevents dismissing of toast on hover
-      //     style: {
-      //       background: "red",
-      //     },
-      //     onClick: function(){} // Callback after click
-      //   }).showToast();
-      // }
+        window.location.href('menu-coordenador.html');
+      }
+      else {
+        Toastify({
+          text: "Login inválido",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "red",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+      }
 
     }).catch((error) => {
       // Handle Errors here.
@@ -77,5 +77,5 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
 })
 
 if(document.getElementById('bem-vindo') && user) {
-  document.getElementById('bem-vindo').innerHTML = 'Bem-vindo, ' + user.name
+  document.getElementById('bem-vindo').innerHTML = 'Bem-vindo, ' + user.displayName;
 }
