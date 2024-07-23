@@ -23,12 +23,17 @@ const auth = getAuth();
 document.getElementById('login-btn').addEventListener('click', ()=>{
     signInWithPopup(auth, provider)
     .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
 
+    // This gives you a Google Access Token. You can use it to access the Google API.
+
+      const getUser = () => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+      }
+
+      getUser();
+      
       if (user.email.includes("icone.g12.br")) {
         Toastify({
           text: "Logado com sucesso",
@@ -45,7 +50,7 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
 
         console.log(user);
 
-        window.location.href('menu-coordenador.html');
+        window.location="https://circle-atlas.github.io/atlas-WEB/menu-coordenador.html";
       }
       else {
         Toastify({
@@ -73,7 +78,3 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
       // ...
     });
 })
-
-if(document.getElementById('bem-vindo') && user) {
-  document.getElementById('bem-vindo').innerHTML = 'Bem-vindo, ' + user.displayName;
-}

@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/app.js"></script>
     <title>Atlas - Menu Coordenadores</title>
 </head>
 <body>
     <h1 id="bem-vindo"></h1>
+    
+    <script>
+        getUser()
+        if (user) {
+            document.getElementById('bem-vindo').innerHTML = "Bem-vindo, " + user.displayName;
+        }
+    </script>
 </body>
 </html>
