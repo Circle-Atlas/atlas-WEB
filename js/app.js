@@ -33,7 +33,6 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
         Toastify({
           text: "Logado com sucesso",
           duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
           close: true,
           gravity: "top", // `top` or `bottom`
           position: "center", // `left`, `center` or `right`
@@ -52,7 +51,6 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
         Toastify({
           text: "Login inválido",
           duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
           close: true,
           gravity: "top", // `top` or `bottom`
           position: "center", // `left`, `center` or `right`
