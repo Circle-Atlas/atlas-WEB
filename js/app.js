@@ -26,13 +26,9 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
 
     // This gives you a Google Access Token. You can use it to access the Google API.
 
-      const getUser = () => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-      }
-
-      getUser();
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
       
       if (user.email.includes("icone.g12.br")) {
         Toastify({
