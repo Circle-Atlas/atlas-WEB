@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-btn{
+    width: fit-content;
+    background-color: rgb(252, 210, 158);
+    color: #fff;
+    border-radius: 30px;
+    user-select: none;
+    font-weight: bolder;
+    cursor: pointer;
+    padding: 1rem 2rem 1rem 2rem;
+}
