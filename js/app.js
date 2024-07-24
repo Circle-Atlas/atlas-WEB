@@ -46,7 +46,7 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
 
         console.log(user);
 
-        localStorage.setItem('user', user);
+        localStorage.setItem('user', JSON.stringify(user));
 
         window.location="https://circle-atlas.github.io/atlas-WEB/menu-coordenador.html";
       }
