@@ -13,6 +13,8 @@
         if(localStorage.getItem('user')) {
             const user = localStorage.getItem('user');
 
+            console.log(user);
+
             document.getElementById('bem-vindo').innerHTML = "Bem-vindo, " + user.displayName;
         }
 
