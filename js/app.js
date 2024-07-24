@@ -46,6 +46,8 @@ document.getElementById('login-btn').addEventListener('click', ()=>{
 
         console.log(user);
 
+        localStorage.setItem('user', user);
+
         window.location="https://circle-atlas.github.io/atlas-WEB/menu-coordenador.html";
       }
       else {
