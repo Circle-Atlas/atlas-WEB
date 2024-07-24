@@ -40,10 +40,10 @@ document.getElementById('login-btn').addEventListener('click', () => {
           onClick: function(){} // Callback after click
         }).showToast();
 
-        // Armazena as informações do usuário no localStorage
+        console.log(user);
+
         localStorage.setItem('user', JSON.stringify(user));
 
-        // Redireciona para a nova página
         window.location = "https://circle-atlas.github.io/atlas-WEB/menu-coordenador.html";
       } else {
         Toastify({

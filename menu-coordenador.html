@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/app.js"></script>
     <title>Atlas - Menu Coordenadores</title>
 </head>
 <body>
@@ -12,12 +11,13 @@
         const user = localStorage.getItem('user');
 
         if (user) {
-        const userData = JSON.parse(user); // Parseia a string JSON para um objeto
-        console.log(userData); // Aqui você pode usar as informações do usuário
-        // Exemplo: exibir o nome do usuário
-        document.body.innerHTML = `<h1>Bem-vindo, ${userData.displayName}</h1>`;
+        const userData = JSON.parse(user); 
+
+        console.log(userData); 
+
+        document.getElementById('bem-vindo').innerHTML = `Bem-vindo, ${userData.displayName}`;
+
         } else {
-        // Redireciona para a página de login se não houver informações do usuário
         window.location = "https://circle-atlas.github.io/atlas-WEB/login.html";
         }
     </script>
