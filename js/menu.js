@@ -5,9 +5,13 @@ const userData = JSON.parse(user);
 
 console.log(userData); 
 
-document.getElementById('bem-vindo').innerHTML = `Bem-vindo, ${userData.displayName}`;
+let bemVindo = document.getElementById('bem-vindo');
 
-document.getElementById('foto-perfil').src = userData.photoURL;
+bemVindo.innerHTML = `Bem-vindo, ${userData.displayName}`;
+
+let fotoPerfil =document.getElementById('foto-perfil');
+
+fotoPerfil.src = userData.photoURL;
 
 } else {
 window.location = "https://circle-atlas.github.io/atlas-WEB/login.html";
