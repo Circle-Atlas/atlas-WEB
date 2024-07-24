@@ -8,16 +8,18 @@
 </head>
 <body>
     <h1 id="bem-vindo"></h1>
-
     <script>
-        if(localStorage.getItem('user')) {
-            const user = JSON.parse(localStorage.getItem('user'));
+        const user = localStorage.getItem('user');
 
-            console.log(user);
-
-            document.getElementById('bem-vindo').innerHTML = "Bem-vindo, " + user.displayName;
+        if (user) {
+        const userData = JSON.parse(user); // Parseia a string JSON para um objeto
+        console.log(userData); // Aqui você pode usar as informações do usuário
+        // Exemplo: exibir o nome do usuário
+        document.body.innerHTML = `<h1>Bem-vindo, ${userData.displayName}</h1>`;
+        } else {
+        // Redireciona para a página de login se não houver informações do usuário
+        window.location = "https://circle-atlas.github.io/atlas-WEB/login.html";
         }
-
     </script>
 </body>
 </html>
