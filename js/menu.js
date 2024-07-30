@@ -14,5 +14,5 @@ let fotoPerfil =document.getElementById('foto-perfil');
 fotoPerfil.src = userData.photoURL;
 
 } else {
-window.location = "https://circle-atlas.github.io/atlas-WEB/login.html";
+window.location = "https://circle-atlas.github.io/atlas-WEB/index.html";
 }
