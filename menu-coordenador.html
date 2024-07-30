@@ -7,14 +7,47 @@
     <link rel="icon" href="assets/img/icone-atlas.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/menu.js"></script>
     <title>Atlas - Menu Coordenadores</title>
 </head>
 <body>
     <div class="perfil">
         <img id="foto-perfil" src=""></img>
     </div>
+
+    <div class="container-principal">
+
+        <div class="container-seletor">
+            <h1 id="bem-vindo"></h1>
+            <button class="turmas-btn" id="1ano">Turmas 1° ano</button>
+            <button class="turmas-btn" id="2ano">Turmas 2° ano</button>
+            <button class="turmas-btn" id="3ano">Turmas 3° ano</button>
+        </div>
     
-    <h1 id="bem-vindo"></h1>
-<script src="js/menu.js"></script>
+        <div class="container-turmas" hidden>
+            <div class="turmas-primeiro" id="turmas" hidden>
+                <button class="turma" id="turma1001">Turma 1001</button>
+                <button class="turma" id="turma1002">Turma 1002</button>
+                <button class="turma" id="turma1003">Turma 1003</button>
+            </div>
+        
+            <div class="turmas-segundo" id="turmas" hidden>
+                <button class="turma" id="turma2001">Turma 2001</button>
+                <button class="turma" id="turma2002">Turma 2002</button>
+                <button class="turma" id="turma2003">Turma 2003</button>
+            </div>
+
+            <div class="turmas-terceiro" id="turmas" hidden>
+                <button class="turma" id="turma3001">Turma 3001</button>
+                <button class="turma" id="turma3002">Turma 3002</button>
+                <button class="turma" id="turma3003">Turma 3003</button>
+        
+            </div>
+        </div>
+    
+        
+
+    </div>
+
 </body>
 </html>
