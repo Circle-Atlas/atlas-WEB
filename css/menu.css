@@ -1,5 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container-perfil {
+    
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 #foto-perfil {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
 }
+
+#foto-perfil:hover {
+    border: 2px solid black;
+}
+
+
+

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let bemVindo = document.getElementById('bem-vindo');
 
-    bemVindo.innerHTML = `Bem-vindo, ${userData.displayName}`;
+    bemVindo.innerHTML = `Bem-vindo, ${userData.displayName}!`;
 
     let fotoPerfil =document.getElementById('foto-perfil');
 
@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
     window.location = "https://circle-atlas.github.io/atlas-WEB/index.html";
     }
+
+    document.getElementById('foto-perfil').addEventListener('click', () => {
+        let nav = document.querySelector('nav');
+        nav.hidden = !nav.hidden;
+    });
+
+    document.getElementById('sair').addEventListener('click', (event) => {
+        event.preventDefault();
+        sair();
+    })
 
     const turmas = document.querySelectorAll('.turmas-btn');
 
