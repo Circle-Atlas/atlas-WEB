@@ -26,15 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             localStorage.removeItem('logado');
         }
-        
-
 
         
     } else {
         window.location = "https://circle-atlas.github.io/atlas-WEB/index.html";
     }
-
-    
-
-
 })
