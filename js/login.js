@@ -46,7 +46,7 @@ document.getElementById('login-btn').addEventListener('click', () => {
 
         localStorage.setItem('logado', 'ok');
 
-        window.location = "https://circle-atlas.github.io/atlas-WEB/menu-coordenador.html";
+        window.location = "https://circle-atlas.github.io/atlas-WEB/estatisticas.html";
       } else {
         Toastify({
           text: "Login inválido",
