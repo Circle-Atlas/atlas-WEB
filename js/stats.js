@@ -33,8 +33,10 @@ alunos.forEach((aluno) => {
 
     imgCardAluno.src = aluno.photoURL;
     nomeCardAluno.innerText = aluno.displayName;
+
+    cardAluno.append(imgCardAluno, nomeCardAluno);
     
-    alunosContainer.append(cardAluno, imgCardAluno, nomeCardAluno);
+    alunosContainer.append(cardAluno);
 
 
     
