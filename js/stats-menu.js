@@ -1,17 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getFirestore, collection, getDocs, updateDoc, doc, query, where, orderBy} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAObRm90Wps9GkcskYq1GgZJBDv3jJAq2s",
-  authDomain: "atlas-14386.firebaseapp.com",
-  projectId: "atlas-14386",
-  storageBucket: "atlas-14386.appspot.com",
-  messagingSenderId: "77319468044",
-  appId: "1:77319468044:web:e31abcf323b0d85d566a29",
-  measurementId: "G-TN95H2W4JK"
-};
+import { firebaseConfig } from '/js/firebase-config.js';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -21,23 +11,34 @@ try {
     const q = query(collection(db, "users"));
     const alunos = await getDocs(q);
 
+    // Contador para limitar alunos mostrados
     let count = 0;
 
     alunos.forEach((aluno) => {
-        if (count >= 18) return; // Interrompe o loop após 12 alunos
+        // Interrompe o loop após 18 alunos
+        if (count >= 18) return; 
 
         const alunosContainer = document.querySelector(".alunos");
     
         let cardAluno = document.createElement('div');
-        cardAluno.id = "aluno-container";
+        cardAluno.className = "aluno-container";
+        cardAluno.id = aluno.id;
         let imgCardAluno = document.createElement('img');
         imgCardAluno.id = "foto-perfil-aluno";
         let nomeCardAluno = document.createElement('h3');
         nomeCardAluno.id = "nome-aluno";
     
-        imgCardAluno.src = aluno.data().photoURL;
+        let imgSrc = aluno.data().photoURL;
+
+        // Verifica se o aluno tem foto, se não tiver, coloca a uma foto padrão
+        if (!imgSrc || imgSrc === "undefined" || imgSrc === "") {
+            imgCardAluno.src = './assets/img/no-pic-user.jpg';
+        } else {
+            imgCardAluno.src = imgSrc;
+        }
+
         nomeCardAluno.innerText = aluno.data().name;
-    
+
         cardAluno.append(imgCardAluno, nomeCardAluno);
     
         alunosContainer.append(cardAluno);
@@ -45,6 +46,18 @@ try {
         console.log(aluno.id, " => ", aluno.data());
     
         count++;
+
+        // Adiciona o evento de click no card do aluno e cria uma variavel local com o id do aluno
+        cardAluno.addEventListener('click', () => {
+            localStorage.setItem('alunoId', aluno.id);
+            localStorage.setItem('alunoNome', aluno.data().name);
+            localStorage.setItem('alunoFoto', imgCardAluno.src);
+
+            console.log(localStorage.getItem('alunoId'));
+
+            window.location = "estatisticas.html";
+
+        })
     });
 } catch (error) {
     document.querySelector('.erro').hidden = false;
@@ -94,6 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         
     } else {
-        window.location = "https://circle-atlas.github.io/atlas-WEB/index.html";
+        window.location = "index.html";
     }
 })

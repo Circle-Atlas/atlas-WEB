@@ -1,0 +1,50 @@
+.alunos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 20px;
+    max-width: 100%;
+}
+
+.aluno-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 285px;
+    border-radius: 40px;
+    gap: 15px;
+    background-color: #D9D9D9;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.aluno-container:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.214);
+}
+
+.aluno-container img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.aluno-container p {
+    max-width: 50%;
+    text-align: center;
+}
+
+.aluno-container h3 {
+    font-size: 15px;
+    max-width: 70%;
+}
+
+.aluno-container h3, .luno-container p {
+    margin: 0;
+}
+
+.erro {
+    width: 40%;
+    margin-left: 30%;
+}
+
