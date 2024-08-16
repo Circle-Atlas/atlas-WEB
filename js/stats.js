@@ -32,14 +32,12 @@ alunos.forEach((aluno) => {
     nomeCardAluno.id = "nome-aluno";
 
     imgCardAluno.src = aluno.photoURL;
-    nomeCardAluno.innerText = aluno.displayName;
+    nomeCardAluno.innerText = aluno.email;
 
     cardAluno.append(imgCardAluno, nomeCardAluno);
     
     alunosContainer.append(cardAluno);
 
-
-    
     console.log(aluno.id, " => ", aluno.data());
 });
 
