@@ -1,6 +1,8 @@
-#alunos {
+.alunos {
     display: flex;
+    flex-wrap: wrap;
     padding: 30px;
+    gap: 20px;
     max-width: 100%;
 }
 
@@ -24,6 +26,11 @@
 #aluno-container p {
     max-width: 50%;
     text-align: center;
+}
+
+#aluno-container h3 {
+    font-size: 15px;
+    max-width: 70%;
 }
 
 #aluno-container h3, #aluno-container p {

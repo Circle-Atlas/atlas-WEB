@@ -17,29 +17,44 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const q = query(collection(db, "users"), orderBy(admin.firestore.FieldPath.documentId(),"desc"));
+try {
+    const q = query(collection(db, "users"));
+    const alunos = await getDocs(q);
 
-const alunos = await getDocs(q);
+    alunos.forEach((aluno) => {
+        const alunosContainer = document.querySelector(".alunos");
 
-alunos.forEach((aluno) => {
-    const alunosContainer = document.querySelector(".alunos");
+        let cardAluno = document.createElement('div');
+        cardAluno.id = "aluno-container";
+        let imgCardAluno = document.createElement('img');
+        imgCardAluno.id = "foto-perfil-aluno";
+        let nomeCardAluno = document.createElement('h3');
+        nomeCardAluno.id = "nome-aluno";
 
-    let cardAluno = document.createElement('div');
-    cardAluno.id = "aluno-container";
-    let imgCardAluno = document.createElement('img');
-    imgCardAluno.id = "foto-perfil-aluno";
-    let nomeCardAluno = document.createElement('h3');
-    nomeCardAluno.id = "nome-aluno";
+        imgCardAluno.src = aluno.data().photoURL;
+        nomeCardAluno.innerText = aluno.data().name;
 
-    imgCardAluno.src = aluno.data().photoURL;
-    nomeCardAluno.innerText = aluno.data().name;
+        cardAluno.append(imgCardAluno, nomeCardAluno);
 
-    cardAluno.append(imgCardAluno, nomeCardAluno);
-    
-    alunosContainer.append(cardAluno);
+        alunosContainer.append(cardAluno);
 
-    console.log(aluno.id, " => ", aluno.data());
-});
+        console.log(aluno.id, " => ", aluno.data());
+    });
+} catch (error) {
+    Toastify({
+        text: "Erro ao carregar os alunos",
+        duration: 6000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: "red",
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+    console.error("Erro ao buscar e processar os dados: ", error);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const user = localStorage.getItem('user');
