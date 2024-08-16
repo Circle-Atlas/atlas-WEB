@@ -21,10 +21,10 @@ try {
     const q = query(collection(db, "users"));
     const alunos = await getDocs(q);
 
-    let count = 1;
+    let count = 0;
 
     alunos.forEach((aluno) => {
-        if (count >= 12) return; // Interrompe o loop após 12 alunos
+        if (count >= 18) return; // Interrompe o loop após 12 alunos
 
         const alunosContainer = document.querySelector(".alunos");
     
