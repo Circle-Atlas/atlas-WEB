@@ -36,7 +36,7 @@ nav a {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 80%;
+    max-width: 80%;
     padding: 40px;
     gap: 20px;
 }

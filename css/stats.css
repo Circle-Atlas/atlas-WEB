@@ -1,6 +1,7 @@
 #alunos {
-    display: grid;
+    display: flex;
     padding: 30px;
+    max-width: 100%;
 }
 
 #aluno-container {
