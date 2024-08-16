@@ -22,25 +22,30 @@ try {
     const alunos = await getDocs(q);
 
     alunos.forEach((aluno) => {
-        const alunosContainer = document.querySelector(".alunos");
+        if (count >= 12) return; // Interrompe o loop após 12 alunos
 
+        const alunosContainer = document.querySelector(".alunos");
+    
         let cardAluno = document.createElement('div');
         cardAluno.id = "aluno-container";
         let imgCardAluno = document.createElement('img');
         imgCardAluno.id = "foto-perfil-aluno";
         let nomeCardAluno = document.createElement('h3');
         nomeCardAluno.id = "nome-aluno";
-
+    
         imgCardAluno.src = aluno.data().photoURL;
         nomeCardAluno.innerText = aluno.data().name;
-
+    
         cardAluno.append(imgCardAluno, nomeCardAluno);
-
+    
         alunosContainer.append(cardAluno);
-
+    
         console.log(aluno.id, " => ", aluno.data());
+    
+        count++;
     });
 } catch (error) {
+    document.querySelector('.erro').hidden = false;
     Toastify({
         text: "Erro ao carregar os alunos",
         duration: 6000,
@@ -53,7 +58,7 @@ try {
         },
         onClick: function(){} // Callback after click
     }).showToast();
-    console.error("Erro ao buscar e processar os dados: ", error);
+    console.error("Erro: ", error);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
