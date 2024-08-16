@@ -31,8 +31,8 @@ alunos.forEach((aluno) => {
     let nomeCardAluno = document.createElement('h3');
     nomeCardAluno.id = "nome-aluno";
 
-    imgCardAluno.src = aluno.photoURL;
-    nomeCardAluno.innerText = aluno.email;
+    imgCardAluno.src = aluno.data().photoURL;
+    nomeCardAluno.innerText = aluno.data().name;
 
     cardAluno.append(imgCardAluno, nomeCardAluno);
     
