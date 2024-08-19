@@ -7,11 +7,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Pega os dados do aluno clicado
-const dadosAluno = JSON.parse(localStorage.getItem('dadosAluno'));
-if(dadosAluno) {
-    document.getElementById('nome-aluno').innerText = dadosAluno.nome;
-    document.getElementById('foto-aluno').src = dadosAluno.foto;
+const dadosMateria = JSON.parse(localStorage.getItem('dadosMateria'));
+if(dadosMateria) {
+    document.getElementById('nome-materia').innerText = dadosMateria.id;
 }
 else {
-    window.location = "menu-estatiticas.html";
+    window.location = "menu-trilhas.html";
 }

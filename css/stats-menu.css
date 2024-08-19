@@ -1,11 +1,3 @@
-.alunos {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 30px;
-    gap: 20px;
-    max-width: 100%;
-}
-
 .aluno-container {
     display: flex;
     flex-direction: column;
@@ -21,7 +13,8 @@
 }
 
 .aluno-container:hover {
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.214);
+    transform: scale(1.02);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.128);
 }
 
 .aluno-container img {

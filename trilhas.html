@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/trilhas.css">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="icon" href="assets/img/icone-atlas.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -14,18 +14,22 @@
     <nav id="nav">
         <img src="assets/img/logo-atlas-verde.png">
         <a href="menu-estatisticas.html" id="nav-estatistica">Estatísticas</a>
-        <a href="trilhas-menu.html" id="nav-trilha">Trilhas do Alunos</a>
+        <a href="menu-trilhas.html" id="nav-trilha">Trilhas do Alunos</a>
     </nav>
     
     <section id="principal">
-        <button id="filtro-turmas">Filtrar Turmas</button>
+        <div class="container-materia">
+            <h1 id="nome-materia"></h1>
+        </div>
+        
+        <div class="trilha">
 
-        <div class="materias">
-            <div id="materia-container">
-                <h3 id="nome-materia">História</h3>
-            </div>
+        </div>
+        
+        <div class="erro" hidden>
+            <img src="assets/img/Error 429.svg" alt="Error">
         </div>
     </section>
 </body>
-<!-- <script src="js/stats.js" type="module"></script> -->
+<script src="js/trilhas.js" type="module"></script>
 </html>
