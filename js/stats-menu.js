@@ -11,9 +11,6 @@ if (!user) {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-if (!user) {
-    sair();
-}
 try {
     const q = query(collection(db, "users"));
     const alunos = await getDocs(q);

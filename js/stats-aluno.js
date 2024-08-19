@@ -19,8 +19,3 @@ if(dadosAluno) {
 else {
     window.location = "menu-estatiticas.html";
 }
-const sair = (e) => {
-    e.preventDefault()
-    localStorage.removeItem('user');
-    window.location = "index.html";
-}
