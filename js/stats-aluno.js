@@ -19,3 +19,7 @@ if(dadosAluno) {
 else {
     window.location = "menu-estatiticas.html";
 }
+document.getElementById('nav-sair').addEventListener('click', (e) => {
+    e.preventDefault();
+    sair();
+})

@@ -18,3 +18,7 @@ if(dadosMateria) {
 else {
     window.location = "menu-trilhas.html";
 }
+document.getElementById('nav-sair').addEventListener('click', (e) => {
+    e.preventDefault();
+    sair();
+})

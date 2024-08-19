@@ -70,3 +70,7 @@ const sair = (e) => {
     localStorage.removeItem('user');
     window.location = "index.html";
 }
+document.getElementById('nav-sair').addEventListener('click', (e) => {
+    e.preventDefault();
+    sair();
+})
