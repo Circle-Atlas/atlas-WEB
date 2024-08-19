@@ -9,8 +9,10 @@
     measurementId: "G-TN95H2W4JK"
   }
 
-  export const sair = () => {
+export const sair = () => {
     localStorage.removeItem('user');
     window.location = "index.html";
 }
+
+export const user = localStorage.getItem('user');
   

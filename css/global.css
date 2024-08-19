@@ -25,12 +25,32 @@ nav img {
     width: 90%;
 }
 
-nav a {
+nav .links a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: black;
     background-color: #949494;
     padding: 10px;
-    overflow: hidden;
+}
+
+nav .links {
+    position: relative;
+    width: auto;
+    height: 78%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#nav-sair {
+    position: absolute;
+    bottom: 0;
+    width: 89%;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    color: white;
 }
 
 #principal {

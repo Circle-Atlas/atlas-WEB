@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
-import { firebaseConfig } from ' https://circle-atlas.github.io/atlas-WEB/js/firebase-config.js ';
+import { firebaseConfig } from ' https://circle-atlas.github.io/atlas-WEB/js/config.js ';
 
 if (localStorage.getItem('user')) {
   localStorage.setItem('logado', 'ok');
