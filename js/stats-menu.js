@@ -1,12 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getFirestore, collection, getDocs, updateDoc, doc, query, where, orderBy} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-import { firebaseConfig } from ' https://circle-atlas.github.io/atlas-WEB/js/firebase-config.js ';
+import { firebaseConfig, sair } from ' https://circle-atlas.github.io/atlas-WEB/js/firebase-config.js ';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const user = localStorage.getItem('user');
+
+if (!user) {
+    sair();
+}
 try {
     const q = query(collection(db, "users"));
     const alunos = await getDocs(q);
@@ -115,4 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         window.location = "index.html";
     }
+})
+document.getElementById('nav-sair').addEventListener('click', (e) => {
+    e.preventDefault();
+    sair();
 })

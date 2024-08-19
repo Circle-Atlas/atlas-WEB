@@ -8,4 +8,9 @@
     appId: "1:77319468044:web:e31abcf323b0d85d566a29",
     measurementId: "G-TN95H2W4JK"
   }
+
+  export const sair = () => {
+    localStorage.removeItem('user');
+    window.location = "index.html";
+}
   
