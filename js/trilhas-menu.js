@@ -65,11 +65,6 @@ try {
     }).showToast();
     console.error("Erro: ", error);
 }
-const sair = (e) => {
-    e.preventDefault()
-    localStorage.removeItem('user');
-    window.location = "index.html";
-}
 document.getElementById('nav-sair').addEventListener('click', (e) => {
     e.preventDefault();
     sair();
