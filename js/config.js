@@ -9,10 +9,12 @@
     measurementId: "G-TN95H2W4JK"
   }
 
+// Função de deslogar
 export const sair = () => {
     localStorage.removeItem('user');
     window.location = "index.html";
 }
 
+// Puxar usuário
 export const user = localStorage.getItem('user');
   

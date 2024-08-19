@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getFirestore, collection, getDocs, updateDoc, doc, query, where, orderBy} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-import { firebaseConfig, user, sair } from ' https://circle-atlas.github.io/atlas-WEB/js/firebase-config.js ';
+import { firebaseConfig, user, sair } from ' https://circle-atlas.github.io/atlas-WEB/js/config.js ';
 
 if (!user) {
     sair();
