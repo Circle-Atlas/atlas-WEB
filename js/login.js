@@ -3,6 +3,11 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstati
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
 import { firebaseConfig } from '/js/firebase-config.js';
 
+if (localStorage.getItem('user')) {
+  localStorage.setItem('logado', 'ok');
+  window.location = "https://circle-atlas.github.io/atlas-WEB/menu-estatisticas.html";
+}
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
