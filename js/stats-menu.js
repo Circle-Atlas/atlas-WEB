@@ -49,11 +49,17 @@ try {
 
         // Adiciona o evento de click no card do aluno e cria uma variavel local com o id do aluno
         cardAluno.addEventListener('click', () => {
-            localStorage.setItem('alunoId', aluno.id);
-            localStorage.setItem('alunoNome', aluno.data().name);
-            localStorage.setItem('alunoFoto', imgCardAluno.src);
 
-            console.log(localStorage.getItem('alunoId'));
+            // Armazena os dados do aluno em um array
+            const dadosAluno = {
+                id: aluno.id,
+                nome: aluno.data().name,
+                foto: imgCardAluno.src,
+            }
+            // Transforma o array num json
+            localStorage.setItem('dadosAluno', JSON.stringify(dadosAluno));
+
+            console.log(JSON.parse(localStorage.getItem('dadosAluno')));
 
             window.location = "estatisticas.html";
 

@@ -6,9 +6,11 @@ import { firebaseConfig } from '/js/firebase-config.js';
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-if(localStorage.getItem('alunoId')) {
-    document.getElementById('nome-aluno').innerText = localStorage.getItem('alunoNome');
-    document.getElementById('foto-aluno').src = localStorage.getItem('alunoFoto');
+// Pega os dados do aluno clicado
+const dadosAluno = JSON.parse(localStorage.getItem('dadosAluno'));
+if(dadosAluno) {
+    document.getElementById('nome-aluno').innerText = dadosAluno.nome;
+    document.getElementById('foto-aluno').src = dadosAluno.foto;
 }
 else {
     window.location = "menu-estatiticas.html";
