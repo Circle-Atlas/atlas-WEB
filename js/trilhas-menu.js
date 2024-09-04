@@ -3,9 +3,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/fireba
 import { getFirestore, collection, getDocs, updateDoc, doc, query, where, orderBy} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { firebaseConfig, user, sair } from ' https://circle-atlas.github.io/atlas-WEB/js/config.js ';
 
-if (!user) {
-    sair();
-}
+// if (!user) {
+//     sair();
+// }
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -38,6 +38,7 @@ try {
             // Armazena os dados da matéria em um array
             const dadosMateria = {
                 id: materia.data().ID,
+                nomeColecoes: materia.data().collectionNames
             }
             // Transforma o array num json
             localStorage.setItem('dadosMateria', JSON.stringify(dadosMateria));
