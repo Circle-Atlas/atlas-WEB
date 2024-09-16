@@ -17,4 +17,3 @@ export const sair = () => {
 
 // Puxar usuário
 export const user = localStorage.getItem('user');
-  

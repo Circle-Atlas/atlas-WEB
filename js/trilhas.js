@@ -1,8 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { firebaseConfig, user, sair } from 'https://circle-atlas.github.io/atlas-WEB/js/config.js';
-
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -58,14 +56,28 @@ document.addEventListener('dragstart', (e) => {
 
 document.addEventListener('dragend', (e) => {
     e.target.classList.remove("dragging");
-    let colecoes = document.querySelectorAll('.colecao-container')
+    let colecoes = document.querySelectorAll('.colecao-container');
     let count = 0;
-    let insert = [];
+    let lista = [];
     colecoes.forEach(colecao =>{
-        insert[count] = colecao.innerHTML;
-        count = ++count;
+        try {
+            let materia = colecao.innerHTML; 
+            lista.push(materia);
+
+            console.log("Documento inserido com sucesso!");
+          } catch (e) {
+            console.error("Erro ao adicionar documento: ", e);
+          }
+          count = ++count;
     })
-    console.log(insert);
+    const docRef = doc(db, 'subjects', dadosMateria.id);
+    updateDoc(docRef, {
+        collectionNames: lista
+    }).then(() => {
+        console.log("Documento atualizado com sucesso!");
+    }).catch((e) => {
+        console.error("Erro ao atualizar o documento: ", e);
+    });
 });
 
 trilhaContainer.addEventListener("dragover", (e) => {
